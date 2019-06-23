@@ -1,0 +1,14 @@
+#principal{
+    background-image: url("salaPrincipal.jpg");
+    height: 345px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#button{
+    opacity: 0;
+    height: 60px;
+    width: 100px;
+    padding-top: 5%;
+    padding-left: 30%;
+}
