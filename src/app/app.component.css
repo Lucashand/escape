@@ -6,12 +6,9 @@
 }
 
 #button{
-    opacity: 0;
     height: 60px;
     width: 100px;
     position: fixed;
     left: 195px;
     top: 40px;
-    /*padding-top: 5%;
-    padding-left: 30%;*/
 }
