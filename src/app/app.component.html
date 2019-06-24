@@ -1,9 +1,14 @@
-
-<div id="principal">
-
-  <div id="button">
-    
+<div class='game-container' [style.width.px]="gameContainerWidth" [style.height.px]="gameContainerheight">
+  <div class='game'>
+    <div *ngIf='(gameService.telaAtual$ | async) as telaAtual' [class]="'tela-atual tela-'+telaAtual.id">
+      <img [src]="'assets/' + telaAtual.img" class='tela-imagem'>
+      <div class='elemento' *ngFor="let elemento of telaAtual.elementos"
+        (click)="elemento.acao(gameService, $event)"
+        [style.top.%]="elemento.positionX"
+        [style.left.%]="elemento.positionY"
+        [style.width.%]="elemento.width"
+        [style.height.%]="elemento.height">
+      </div>
+    </div>
   </div>
-
 </div>
-
