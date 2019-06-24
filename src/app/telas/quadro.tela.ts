@@ -1,12 +1,13 @@
 import { Tela } from '../model/tela.model';
 import { GameService } from '../game.service';
 import { SalaPrincipalTela } from './sala-principal.tela';
+import { Chave } from '../itens/chave';
 
 export class QuadroPrincipalTela implements Tela {
-  static titulo = "Quadro Sala Principal";
-  static id = "quadro-principal";
-  static img = "quadro-sala-principal.jpg"
-  static elementos = [
+  titulo = "Quadro Sala Principal";
+  id = "quadro-principal";
+  img = "quadro-sala-principal.jpg"
+  elementos = [
     {
       id: 'voltar',
       positionX: 48,
@@ -14,8 +15,9 @@ export class QuadroPrincipalTela implements Tela {
       width: 10,
       height: 13,
       acao: (game: GameService) => {
-        game.setTelaAtual(SalaPrincipalTela)
+        game.setTelaAtual(new SalaPrincipalTela())
       }
-    }
+    },
+    new Chave()
   ]
 }

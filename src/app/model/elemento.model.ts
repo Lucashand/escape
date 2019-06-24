@@ -1,10 +1,13 @@
 import { GameService } from '../game.service';
 
-export class Elemento {
+export interface Elemento {
   id: string;
+  nome?: string;
   positionX: number;
   positionY: number;
   width: number;
-  height: number;
+  height?: number;
+  img?: string;
   acao: (game: GameService, $event?: Event) => any;
+  deveAparecer?: (game: GameService) => boolean;
 }

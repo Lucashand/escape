@@ -2,13 +2,18 @@
   <div class='game'>
     <div *ngIf='(gameService.telaAtual$ | async) as telaAtual' [class]="'tela-atual tela-'+telaAtual.id">
       <img [src]="'assets/' + telaAtual.img" class='tela-imagem'>
-      <div class='elemento' *ngFor="let elemento of telaAtual.elementos"
-        (click)="elemento.acao(gameService, $event)"
-        [style.top.%]="elemento.positionX"
-        [style.left.%]="elemento.positionY"
-        [style.width.%]="elemento.width"
-        [style.height.%]="elemento.height">
-      </div>
+      <ng-container *ngFor="let elemento of telaAtual.elementos">
+          <div class='elemento' *ngIf="!elemento.deveAparecer || elemento.deveAparecer(gameService)"
+          (click)="elemento.acao(gameService, $event)"
+          [style.top.%]="elemento.positionX"
+          [style.left.%]="elemento.positionY"
+          [style.width.%]="elemento.width"
+          [style.height.%]="elemento.height">
+          <img *ngIf="elemento.img" [src]="'assets/elementos/'+elemento.img">
+        </div>
+      </ng-container>
+
+
     </div>
   </div>
 </div>

@@ -21,7 +21,9 @@ app-root {
   position: absolute;
   cursor: pointer;
 }
-
+.elemento img {
+  width: 100%;
+}
 .tela-atual {
   /* background-repeat: no-repeat;
   background-position: center;
