@@ -17,12 +17,13 @@ export class AppComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
+    this.onResize();
     this.gameService.setTelaAtual(SalaPrincipalTela);
   }
 
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
-    var isPortrait = event.target.innerHeight > event.target.innerWidth;
+  onResize() {
+    var isPortrait = window.outerHeight > window.outerWidth;
     if(isPortrait){
       document.body.classList.add('portrait');
       document.body.classList.remove('landscape');
@@ -30,8 +31,8 @@ export class AppComponent implements OnInit {
       document.body.classList.add('landscape');
       document.body.classList.remove('portrait');
     }
-    this.gameContainerWidth = isPortrait ? event.target.innerHeight : event.target.innerWidth;
-    this.gameContainerheight = isPortrait ? event.target.innerWidth : event.target.innerHeight;
+    this.gameContainerWidth = isPortrait ? window.outerHeight : window.outerWidth;
+    this.gameContainerheight = isPortrait ? window.outerWidth : window.outerHeight;
   }
 }
 
