@@ -15,7 +15,7 @@ export class GameService {
     this.telaAtual$.next(novaTela);
   }
   adicionarItem(item: Item){
-    if(!this.contemItem(item)){
+    if(!this.possuiItem(item)){
       this.itens$.next([...this.itens$.value, item]);
     }
   }
@@ -24,7 +24,7 @@ export class GameService {
     this.itens$.next(this.itens$.value.filter(i => i.id !== ((typeof item === 'string') ? item : item.id)));
   }
 
-  contemItem(item: Item | string ){
+  possuiItem(item: Item | string ){
     return !!this.itens$.value.find(i => i.id === ((typeof item === 'string') ? item : item.id))
   }
 }

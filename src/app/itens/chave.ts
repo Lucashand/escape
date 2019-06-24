@@ -13,6 +13,6 @@ export class Chave implements Item, Elemento {
     game.adicionarItem(this)
   }
   public deveAparecer(game: GameService) {
-    return !game.contemItem(this)
+    return !game.possuiItem(this)
   }
 }
