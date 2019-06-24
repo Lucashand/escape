@@ -22,7 +22,9 @@ export class AppComponent implements OnInit {
 
   @HostListener('window:resize', ['$event'])
   onResize() {
-    var isPortrait = window.innerHeight > window.innerWidth;
+
+    const bodySize = document.body.getBoundingClientRect();
+    var isPortrait = bodySize.height > bodySize.width;
     if(isPortrait){
       document.body.classList.add('portrait');
       document.body.classList.remove('landscape');
@@ -30,8 +32,8 @@ export class AppComponent implements OnInit {
       document.body.classList.add('landscape');
       document.body.classList.remove('portrait');
     }
-    this.gameContainerWidth = isPortrait ? window.innerHeight : window.innerWidth;
-    this.gameContainerheight = isPortrait ? window.innerWidth : window.innerHeight;
+    this.gameContainerWidth = isPortrait ? bodySize.height : bodySize.width;
+    this.gameContainerheight = isPortrait ? bodySize.width : bodySize.height;
   }
 }
 
