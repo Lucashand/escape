@@ -19,7 +19,7 @@ app-root {
 
 .elemento {
   position: absolute;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 .elemento img {
   width: 100%;

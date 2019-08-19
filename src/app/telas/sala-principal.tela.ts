@@ -1,5 +1,6 @@
 import { Tela } from '../model/tela.model';
 import { GameService } from '../game.service';
+import { SalaPrincipalT001Tela } from '../telas/sala-principal-T001.tela';
 import { QuadroPrincipalTela } from './quadro.tela';
 import { Elemento } from '../model/elemento.model';
 
@@ -16,7 +17,7 @@ export class SalaPrincipalTela implements Tela {
       height: 19,
       nome: "Quadro",
       acao: (game: GameService, click:Event) => {
-        game.setTelaAtual(new QuadroPrincipalTela())
+        game.setTelaAtual(new SalaPrincipalT001Tela())
       }
     }
   ]

@@ -1,7 +1,7 @@
 import { Tela } from '../model/tela.model';
 import { GameService } from '../game.service';
 import { SalaPrincipalTela } from './sala-principal.tela';
-import { Chave } from '../itens/chave';
+import { chave } from '../itens/chave';
 
 export class QuadroPrincipalTela implements Tela {
   titulo = "Quadro Sala Principal";
@@ -18,6 +18,6 @@ export class QuadroPrincipalTela implements Tela {
         game.setTelaAtual(new SalaPrincipalTela())
       }
     },
-    new Chave()
+    chave
   ]
 }

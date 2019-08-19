@@ -24,16 +24,16 @@ export class AppComponent implements OnInit {
   onResize() {
 
     const bodySize = document.body.getBoundingClientRect();
-    var isPortrait = bodySize.height > bodySize.width;
-    if(isPortrait){
+    var heighIsMaior = bodySize.height > bodySize.width;
+    if(heighIsMaior){
       document.body.classList.add('portrait');
       document.body.classList.remove('landscape');
     } else {
       document.body.classList.add('landscape');
       document.body.classList.remove('portrait');
     }
-    this.gameContainerWidth = isPortrait ? bodySize.height : bodySize.width;
-    this.gameContainerheight = isPortrait ? bodySize.width : bodySize.height;
+    this.gameContainerWidth = heighIsMaior ? bodySize.height  : bodySize.width;
+    this.gameContainerheight = heighIsMaior ? (bodySize.width) -1 : bodySize.height;
   }
 }
 
